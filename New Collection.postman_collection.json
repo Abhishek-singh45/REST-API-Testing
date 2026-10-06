@@ -1,0 +1,660 @@
+{
+  "info": {
+    "_postman_id": "01a8c5ec-f34f-4500-bd35-d899576fe6e3",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58359146",
+    "_collection_link": "https://go.postman.co/collection/58359146-01a8c5ec-f34f-4500-bd35-d899576fe6e3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request-1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"qa@demo.io\",\r\n  \"password\": \"Password123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.qaautomationlabs.com/v1/auth/login",
+          "protocol": "https",
+          "host": [
+            "api",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Valid Registration",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"anotheruser@test.com\",\r\n  \"password\": \"123\",\r\n  \"name\": \"Test User\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/auth/register",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Refresh Token – Valid",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"refreshToken\": \"invalid_refresh_token_123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/auth/refresh",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "refresh"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Current User – Valid Token",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "invalid_token_123",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/auth/me",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Users – List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/users",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User – Valid ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/users/1",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create User – Valid",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Another\",\r\n    \"lastName\": \"User\",\r\n    \"username\": \"another.user100\",\r\n    \"email\": \"test.user100@example.com\",\r\n    \"role\": \"viewer\",\r\n    \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/users",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User – Valid",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Updated\",\r\n    \"lastName\": \"User\",\r\n    \"username\": \"updated.user100\",\r\n    \"email\": \"updated.user100@example.com\",\r\n    \"role\": \"viewer\",\r\n    \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/users/51",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "51"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User – Valid",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/users/99999",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Products – List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Product – Valid ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products/61",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "61"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product – Valid",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Test Wireless Mouse\",\r\n    \"category\": \"Accessories\",\r\n    \"price\": 25.99,\r\n    \"currency\": \"USD\",\r\n    \"stock\": 100,\r\n    \"rating\": 4.5,\r\n    \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Product – Valid",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Updated Wireless Mouse\",\r\n    \"sku\": \"SKU-01001\",\r\n    \"category\": \"Accessories\",\r\n    \"price\": 29.99,\r\n    \"currency\": \"USD\",\r\n    \"stock\": 150,\r\n    \"rating\": 4.6,\r\n    \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products/1",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Updated Product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products/1",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Product – Valid",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products/1",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Deleted Product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/products/1",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Orders",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders/1",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Non-Existing Order",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders/99999",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customerId\": 17,\r\n  \"items\": [\r\n    {\r\n      \"productId\": 31,\r\n      \"quantity\": 2,\r\n      \"unitPrice\": 149.58\r\n    }\r\n  ],\r\n  \"currency\": \"USD\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Created Order",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders/41",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "41"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Order - Missing Customer ID",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"items\": [\r\n    {\r\n      \"productId\": 31,\r\n      \"quantity\": 2,\r\n      \"unitPrice\": 149.58\r\n    }\r\n  ],\r\n  \"currency\": \"USD\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Order - Missing Items",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customerId\": 17,\r\n  \"currency\": \"USD\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Order",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://testing.qaautomationlabs.com/api/v1/orders/2",
+          "protocol": "https",
+          "host": [
+            "testing",
+            "qaautomationlabs",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0zpo",
+      "secret": true
+    }
+  ]
+}
